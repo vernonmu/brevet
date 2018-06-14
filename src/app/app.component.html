@@ -21,19 +21,17 @@
     </nav>
   </header>
   <section>
-    <div class="hero">
-
-    </div>
+    <div class="hero"></div>
   </section>
 
   <div class="panel bg-gray">
-    <p>Breve Technology Group brings enterprise-level technology to small and mid-sized companies – building the digital technology that solves unique problems, works better and turns ideas into functional reality.</p>
+    <p>Breve Technology Group brings technology to small and mid-sized organizations – building the digital tools that solve unique problems, works easier, and turns ideas into reality.</p>
   </div>
   <div class="panel-row">
     <div class="pane">
       <div class="img-container first required">
       </div>
-      <p style="text-align:center;"><strong>Bring Your Business</strong> Ideas, Problems, Challenges or Dreams to Breve Tech.</p>
+      <p style="text-align:center;">Bring Your Business Ideas, Problems, Challenges or Dreams to Breve Tech.</p>
     </div>
 
     <div class="pane">
@@ -49,10 +47,11 @@
     </div>
   </div>
 
-  <div class="panel bg-red text-centered">
+  <div class="panel bg-red text-center">
     <h3>With you every step of the way.</h3>
-
-    <p>Here are just a few of the ways Breve Tech can help you and your business</p>
+  </div>
+  <div class="text-center">
+    <p>Here are just a few of the ways Breve Tech can help you and your business:</p>
 
     <ul class="items" style="margin-top:40px;display:block;">
       <li>Repair or modify existing software<br></li>
@@ -67,13 +66,26 @@
   <div class="panel bg-gray">
     <h2 style="margin-top:10%;font-size:2em;text-align:center;font-weight:bold;"><strong>Let’s Talk About How We Can Help Your Business Grow</strong></h2>
 
-    <h2 style="margin-top:10%;text-align:center;font-weight:bold;">Get started!</h2>
+    <!-- <h2 class="cta">Send a message</h2> -->
+    <!-- <button type="button" (click)="test()">click test</button> -->
 
-    <div id="messages" class="alert alert-success animated bounce" data-ng-show="messages" data-ng-bind="messages"></div>
+    <!-- <div id="messages" class="alert alert-success animated bounce" data-ng-show="messages" data-ng-bind="messages"></div> -->
     <div class="contactform">
-
-      <form ng-submit="postInquiry(form)" id="inquiry">
-
+      <form #f="ngForm" [formGroup]="angularForm" novalidate (ngSubmit)="onSubmit(f.value)">
+        <div class="form-group">
+          <label>Name:</label>
+          <input class="form-control" formControlName="name" type="text">
+        </div>
+        <div *ngIf="angularForm.controls['name'].invalid && (angularForm.controls['name'].dirty || angularForm.controls['name'].touched)" class="alert alert-danger">
+          <div *ngIf="angularForm.controls['name'].errors.required">
+            Name is required.
+          </div>
+        </div>
+        <button type="submit" [disabled]="angularForm.pristine || angularForm.invalid" class="btn btn-success">
+          Send
+        </button>
+      </form>
+      <!-- <form ng-submit="postInquiry(form)" id="inquiry">
         <div class="form-group">
           <label class="col-form-label">Your Name</label>
           <input class="form-control" type="text" placeholder="Enter your name" ng-model="form.firstname" ng-required="required">
@@ -105,7 +117,7 @@
           <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Additional details or comments" ng-model="form.comment"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+      </form> -->
     </div>
   </div>
 </body>
