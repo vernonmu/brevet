@@ -1,0 +1,172 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  /*border: 1px dashed red;*/
+  }
+
+body {
+  /*font-family: 'Quicksand', sans-serif;*/
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  line-height: 1.6;
+  font-size: 18px;
+}
+header {
+  display:flex;
+  justify-content: space-between;
+  margin:20px 40px;
+}
+nav li {
+  display: inline-block;
+  margin: auto 2vw;
+}
+
+nav li a {
+  text-decoration: none;
+  color: black;
+
+}
+
+nav li a:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  font-weight:bold;
+}
+
+.hero {
+  height:60vh;
+  width:100%;
+
+  background-image:url('/web/20170815105606im_/http://brevetech.com/img/snap3.jpg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.content {
+  display:flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  margin: auto 45px;
+}
+
+.panel {
+  padding:8% 6%;
+}
+
+.panel-row {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  /* padding:50px inherit;*/
+  padding-top:40px;
+  padding-bottom:40px;
+
+}
+
+.img-container {
+  display:flex;
+  justify-content: center;
+  width:180px;
+  height:180px;
+  margin:auto;
+  /*padding:70px;*/
+  border-radius:7px;
+}
+
+.first {
+  background: url('/web/20170815105606im_/http://brevetech.com/img/vectors.png') -10px -10px;
+}
+
+.second {
+  background: url('/web/20170815105606im_/http://brevetech.com/img/vectors.png') 190px -10px;
+}
+
+.third {
+  background: url('/web/20170815105606im_/http://brevetech.com/img/vectors.png') 390px -10px;
+}
+
+.items li {
+  list-style:none;
+  text-align:center;
+}
+
+.pane {
+  width:20%;
+
+}
+
+.pane p {
+  text-align:center;
+  margin-top: 25px;
+}
+
+.panel p {
+  font-size:1.5em;
+  text-align: center;
+
+}
+
+.panel h3 {
+  text-align:center;
+  font-size:3em;
+  font-weight:600;
+  margin-bottom:40px;
+}
+
+.bg-gray {
+  background-color: #f3f3f3;
+}
+
+.bg-red {
+  background-color: #6C9588;
+  color: white;
+}
+
+.bg-blue {
+  background-color: #203896;
+  color:white;
+}
+
+.content * {
+  margin:.5vh inherit;
+}
+
+.contactform {
+  width:80%;
+  margin:auto;
+}
+
+@media all and (max-width:780px) {
+  .pane {
+    width:100%;
+    margin:15px auto;
+  }
+
+  .panel-row {
+    flex-flow: column;
+    padding-left:4%;
+    padding-right: 4%;
+  }
+
+  header {
+    display:block;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  nav li {
+    width:100%;
+    margin:auto;
+  }
+
+  .logo {
+    width:100%;
+    text-align: center;
+  }
+}

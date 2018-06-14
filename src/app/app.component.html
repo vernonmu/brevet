@@ -1,20 +1,112 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Breve Technology | Home </title>
+</head>
+
+<body ng-controller="mainCtrl">
+  <header>
+    <div class="logo">
+      <strong>BREVE TECH</strong>
+    </div>
+    <nav>
+      <ul>
+        <!-- <li><a href="#">Home</a></li> -->
+        <!-- <li><a href="#">Services</a></li> -->
+        <!-- <li><a href="#">Contact</a></li> -->
+      </ul>
+    </nav>
+  </header>
+  <section>
+    <div class="hero">
+
+    </div>
+  </section>
+
+  <div class="panel bg-gray">
+    <p>Breve Technology Group brings enterprise-level technology to small and mid-sized companies – building the digital technology that solves unique problems, works better and turns ideas into functional reality.</p>
+  </div>
+  <div class="panel-row">
+    <div class="pane">
+      <div class="img-container first required">
+      </div>
+      <p style="text-align:center;"><strong>Bring Your Business</strong> Ideas, Problems, Challenges or Dreams to Breve Tech.</p>
+    </div>
+
+    <div class="pane">
+      <div class="img-container second">
+      </div>
+      <p>Breve Tech&#39;s tight knit team of experts becomes your team of experts, advising you on the most effective, efficient solution.</p>
+    </div>
+
+    <div class="pane">
+      <div class="img-container third">
+      </div>
+      <p>Breve Tech constructs, implements and maintains your amazing new technology and makes your life easier.</p>
+    </div>
+  </div>
+
+  <div class="panel bg-red text-centered">
+    <h3>With you every step of the way.</h3>
+
+    <p>Here are just a few of the ways Breve Tech can help you and your business</p>
+
+    <ul class="items" style="margin-top:40px;display:block;">
+      <li>Repair or modify existing software<br></li>
+      <li>Develop a mobile app with real revenue potential<br></li>
+      <li>Build functional prototypes for entrepreneurs<br></li>
+      <li>Be your multi-talented technology department</li>
+      <li>Web management and digital maintenance of your business</li>
+      <li>Make eCommerce work for you and your clients</li>
+      <li>Customized functionality tailored to your business</li>
+    </ul>
+  </div>
+  <div class="panel bg-gray">
+    <h2 style="margin-top:10%;font-size:2em;text-align:center;font-weight:bold;"><strong>Let’s Talk About How We Can Help Your Business Grow</strong></h2>
+
+    <h2 style="margin-top:10%;text-align:center;font-weight:bold;">Get started!</h2>
+
+    <div id="messages" class="alert alert-success animated bounce" data-ng-show="messages" data-ng-bind="messages"></div>
+    <div class="contactform">
+
+      <form ng-submit="postInquiry(form)" id="inquiry">
+
+        <div class="form-group">
+          <label class="col-form-label">Your Name</label>
+          <input class="form-control" type="text" placeholder="Enter your name" ng-model="form.firstname" ng-required="required">
+        </div>
+        <div class="form-group">
+          <label class="col-form-label">Telephone</label>
+          <div>
+            <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="example-tel-input" ng-model="form.phone" ng-required="required">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email address</label>
+          <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" ng-model="form.email" ng-required="required">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label>Type of Project</label>
+          <select ng-model="form.typeofproj" class="form-control" id="exampleSelect1" ng-required="required">
+                    <option></option>
+                    <option>Create New Site</option>
+                    <option>Update Existing Site</option>
+                    <option>Social Media Management</option>
+                    <option>Web Application</option>
+                    <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleTextarea">Additional Comments</label>
+          <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Additional details or comments" ng-model="form.comment"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
